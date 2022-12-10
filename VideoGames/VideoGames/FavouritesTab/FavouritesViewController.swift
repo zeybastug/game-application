@@ -7,8 +7,10 @@
 
 import UIKit
 
-class FavouritesViewController: UIViewController, UITabBarDelegate, UITabBarControllerDelegate {
+class FavouritesViewController: BaseViewController {
 
+    @IBOutlet weak var favouritesTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,7 +37,7 @@ class FavouritesViewController: UIViewController, UITabBarDelegate, UITabBarCont
         
     }
     
-    func changeColor(itemAppearance:UITabBarItemAppearance)
+    override func changeColor(itemAppearance:UITabBarItemAppearance)
     {
         itemAppearance.normal.iconColor = UIColor.black
         itemAppearance.normal.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]

@@ -7,47 +7,59 @@
 
 import UIKit
 
-class GamesViewController: UIViewController, UITabBarDelegate, UITabBarControllerDelegate {
+class GamesViewController: BaseViewController {
+    
+    @IBOutlet weak var searchTextField: UITextField!
+    
+    @IBOutlet weak var gamesTableView: UITableView! {
+        didSet {
+            gamesTableView.dataSource = self
+            gamesTableView.delegate = self
+        }
+    }
+    
+    private var games: [GameModel]? {
+        didSet {
+            gamesTableView.reloadData()
+        }
+    }
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            
+            Client.getGames { [weak self] res, error in
+                guard let self = self else { return }
+                self.games = res?.results
+                
+            }
+            
+            
+        }
+    }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let tabAppearance = UITabBarAppearance()
-        changeColor(itemAppearance: tabAppearance.stackedLayoutAppearance)
-        changeColor(itemAppearance: tabAppearance.inlineLayoutAppearance)
-        changeColor(itemAppearance: tabAppearance.compactInlineLayoutAppearance)
-        
-        tabBarController?.delegate = self
-        tabBarController?.tabBar.standardAppearance = tabAppearance
-        tabBarController?.tabBar.scrollEdgeAppearance = tabAppearance
-        
-        let navAppearance = UINavigationBarAppearance()
 
-        navAppearance.backgroundColor = UIColor(named: "naviColor")
-        navAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        
-        navigationController?.navigationBar.barStyle = .default
-        navigationController?.navigationBar.isTranslucent = false
-        
-        navigationController?.navigationBar.standardAppearance = navAppearance
-        navigationController?.navigationBar.compactAppearance = navAppearance
-        navigationController?.navigationBar.scrollEdgeAppearance = navAppearance
+extension GamesViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        games?.count ?? 0
         
     }
     
-    func changeColor(itemAppearance:UITabBarItemAppearance)
-    {
-        itemAppearance.normal.iconColor = UIColor.black
-        itemAppearance.normal.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
-        itemAppearance.selected.iconColor = UIColor(named: "selectColor")
-        itemAppearance.selected.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "selectColor") ?? UIColor.green]
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "gameCell", for: indexPath) as? GameTableViewCell, let model = games?[indexPath.row] else {
+            return UITableViewCell()
+        }
+        cell.likeImageView.isHidden = true
+
+        cell.configureCell(model: model)
+        return cell
+        
+        
     }
-
-
+    
+    
 }
 
-//extension ViewController: UITabBarDelegate, UITabBarControllerDelegate{
-    
-    
-//}
+
 
