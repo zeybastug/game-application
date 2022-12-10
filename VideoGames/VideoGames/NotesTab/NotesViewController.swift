@@ -7,8 +7,10 @@
 
 import UIKit
 
-class NotesViewController: UIViewController, UITabBarDelegate, UITabBarControllerDelegate {
+class NotesViewController: BaseViewController {
 
+    @IBOutlet weak var notesTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,7 +37,7 @@ class NotesViewController: UIViewController, UITabBarDelegate, UITabBarControlle
         
     }
     
-    func changeColor(itemAppearance:UITabBarItemAppearance)
+    override func changeColor(itemAppearance:UITabBarItemAppearance)
     {
         itemAppearance.normal.iconColor = UIColor.black
         itemAppearance.normal.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
