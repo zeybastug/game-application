@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "GamesViewController.prepare(for:sender:):GamesViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "sender.source">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in static Client.taskForGETRequest&lt;&#x3c4;_0_0&gt;(url:responsetType:completion:):Client.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "ResponseType.self">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in DetailsViewController.viewDidLoad():DetailsViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "NewNoteView.pickerView(_:didSelectRow:inComponent:):NewNoteView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "GamesViewController.shared.games">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DetailsViewController.viewDidLoad():DetailsViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "static Client.getDetails(id:completion:):Client.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Endpoints.details(id).url">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "NewNoteView.saveButtonPressed(_:):NewNoteView.swift">
+      </ContextState>
+      <ContextState
+         contextName = "CoreDataManager.updateNote(name:note:id:):CoreDataManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "result[0]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "NoteViewController.extractedFunc():NoteViewController.swift">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

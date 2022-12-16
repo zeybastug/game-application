@@ -7,18 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42CABFB82948CFF2005AA7BA /* GenreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CABFB72948CFF2005AA7BA /* GenreModel.swift */; };
+		42CABFBD294C49AF005AA7BA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 42CABFBC294C49AF005AA7BA /* Kingfisher */; };
 		42EB60462942485B00C9DED6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB60452942485B00C9DED6 /* AppDelegate.swift */; };
 		42EB60482942485B00C9DED6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB60472942485B00C9DED6 /* SceneDelegate.swift */; };
 		42EB604A2942485B00C9DED6 /* GamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB60492942485B00C9DED6 /* GamesViewController.swift */; };
 		42EB604D2942485B00C9DED6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42EB604B2942485B00C9DED6 /* Main.storyboard */; };
-		42EB60502942485B00C9DED6 /* VideoGames.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42EB604E2942485B00C9DED6 /* VideoGames.xcdatamodeld */; };
 		42EB60522942485C00C9DED6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42EB60512942485C00C9DED6 /* Assets.xcassets */; };
 		42EB60552942485C00C9DED6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42EB60532942485C00C9DED6 /* LaunchScreen.storyboard */; };
 		42EB60602942485C00C9DED6 /* VideoGamesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB605F2942485C00C9DED6 /* VideoGamesTests.swift */; };
 		42EB606A2942485C00C9DED6 /* VideoGamesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB60692942485C00C9DED6 /* VideoGamesUITests.swift */; };
 		42EB606C2942485C00C9DED6 /* VideoGamesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB606B2942485C00C9DED6 /* VideoGamesUITestsLaunchTests.swift */; };
 		42EB607C29425FE300C9DED6 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB607B29425FE300C9DED6 /* FavouritesViewController.swift */; };
-		42EB607E29425FF400C9DED6 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB607D29425FF400C9DED6 /* NotesViewController.swift */; };
+		42EB607E29425FF400C9DED6 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB607D29425FF400C9DED6 /* NoteViewController.swift */; };
 		42EB60802942680C00C9DED6 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB607F2942680C00C9DED6 /* GameTableViewCell.swift */; };
 		42EB60822942682E00C9DED6 /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB60812942682E00C9DED6 /* NoteTableViewCell.swift */; };
 		42EB60842942696C00C9DED6 /* FavouriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB60832942696C00C9DED6 /* FavouriteTableViewCell.swift */; };
@@ -28,6 +29,15 @@
 		42EB608D2944C1A600C9DED6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB608C2944C1A600C9DED6 /* BaseViewController.swift */; };
 		42EB60902944C23B00C9DED6 /* MaterialActivityIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 42EB608F2944C23B00C9DED6 /* MaterialActivityIndicator */; };
 		42EB60932944C27100C9DED6 /* SwiftAlertView in Frameworks */ = {isa = PBXBuildFile; productRef = 42EB60922944C27100C9DED6 /* SwiftAlertView */; };
+		42EB60952944EBDE00C9DED6 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB60942944EBDE00C9DED6 /* CoreDataManager.swift */; };
+		42EB609D2944F41200C9DED6 /* NewNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB609C2944F41200C9DED6 /* NewNoteView.swift */; };
+		42EB609F2944F43100C9DED6 /* NewNoteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42EB609E2944F43100C9DED6 /* NewNoteView.xib */; };
+		42EB60A12945F92600C9DED6 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB60A02945F92600C9DED6 /* DetailsViewController.swift */; };
+		42EB60A72946181100C9DED6 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB60A62946181100C9DED6 /* UIApplication.swift */; };
+		42EB60A92946189300C9DED6 /* AlertError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB60A82946189300C9DED6 /* AlertError.swift */; };
+		42EB60AB294618A300C9DED6 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB60AA294618A300C9DED6 /* AlertManager.swift */; };
+		42EB60AE2946320D00C9DED6 /* VideoGames.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42EB60AC2946320D00C9DED6 /* VideoGames.xcdatamodeld */; };
+		42EB60B0294666B700C9DED6 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB60AF294666B700C9DED6 /* DetailModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,12 +58,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		42CABFB72948CFF2005AA7BA /* GenreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreModel.swift; sourceTree = "<group>"; };
 		42EB60422942485B00C9DED6 /* VideoGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42EB60452942485B00C9DED6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42EB60472942485B00C9DED6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		42EB60492942485B00C9DED6 /* GamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesViewController.swift; sourceTree = "<group>"; };
 		42EB604C2942485B00C9DED6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		42EB604F2942485B00C9DED6 /* VideoGames.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VideoGames.xcdatamodel; sourceTree = "<group>"; };
 		42EB60512942485C00C9DED6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42EB60542942485C00C9DED6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42EB60562942485C00C9DED6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -63,7 +73,7 @@
 		42EB60692942485C00C9DED6 /* VideoGamesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoGamesUITests.swift; sourceTree = "<group>"; };
 		42EB606B2942485C00C9DED6 /* VideoGamesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoGamesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		42EB607B29425FE300C9DED6 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
-		42EB607D29425FF400C9DED6 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		42EB607D29425FF400C9DED6 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		42EB607F2942680C00C9DED6 /* GameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
 		42EB60812942682E00C9DED6 /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
 		42EB60832942696C00C9DED6 /* FavouriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTableViewCell.swift; sourceTree = "<group>"; };
@@ -71,6 +81,15 @@
 		42EB60882944B7C700C9DED6 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		42EB608A2944B7EE00C9DED6 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		42EB608C2944C1A600C9DED6 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		42EB60942944EBDE00C9DED6 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		42EB609C2944F41200C9DED6 /* NewNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteView.swift; sourceTree = "<group>"; };
+		42EB609E2944F43100C9DED6 /* NewNoteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewNoteView.xib; sourceTree = "<group>"; };
+		42EB60A02945F92600C9DED6 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		42EB60A62946181100C9DED6 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		42EB60A82946189300C9DED6 /* AlertError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertError.swift; sourceTree = "<group>"; };
+		42EB60AA294618A300C9DED6 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		42EB60AD2946320D00C9DED6 /* VideoGames.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VideoGames.xcdatamodel; sourceTree = "<group>"; };
+		42EB60AF294666B700C9DED6 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42CABFBD294C49AF005AA7BA /* Kingfisher in Frameworks */,
 				42EB60932944C27100C9DED6 /* SwiftAlertView in Frameworks */,
 				42EB60902944C23B00C9DED6 /* MaterialActivityIndicator in Frameworks */,
 			);
@@ -124,7 +144,10 @@
 			isa = PBXGroup;
 			children = (
 				42EB60452942485B00C9DED6 /* AppDelegate.swift */,
+				42EB60A62946181100C9DED6 /* UIApplication.swift */,
 				42EB60472942485B00C9DED6 /* SceneDelegate.swift */,
+				42EB608C2944C1A600C9DED6 /* BaseViewController.swift */,
+				42EB60942944EBDE00C9DED6 /* CoreDataManager.swift */,
 				42EB60852943ACEE00C9DED6 /* ServiceOperations */,
 				42EB607829425ED700C9DED6 /* GamesTab */,
 				42EB607A29425F3800C9DED6 /* NotesTab */,
@@ -133,7 +156,7 @@
 				42EB60512942485C00C9DED6 /* Assets.xcassets */,
 				42EB60532942485C00C9DED6 /* LaunchScreen.storyboard */,
 				42EB60562942485C00C9DED6 /* Info.plist */,
-				42EB604E2942485B00C9DED6 /* VideoGames.xcdatamodeld */,
+				42EB60AC2946320D00C9DED6 /* VideoGames.xcdatamodeld */,
 			);
 			path = VideoGames;
 			sourceTree = "<group>";
@@ -159,8 +182,8 @@
 			isa = PBXGroup;
 			children = (
 				42EB60492942485B00C9DED6 /* GamesViewController.swift */,
+				42EB60A02945F92600C9DED6 /* DetailsViewController.swift */,
 				42EB607F2942680C00C9DED6 /* GameTableViewCell.swift */,
-				42EB608C2944C1A600C9DED6 /* BaseViewController.swift */,
 			);
 			path = GamesTab;
 			sourceTree = "<group>";
@@ -177,7 +200,9 @@
 		42EB607A29425F3800C9DED6 /* NotesTab */ = {
 			isa = PBXGroup;
 			children = (
-				42EB607D29425FF400C9DED6 /* NotesViewController.swift */,
+				42EB607D29425FF400C9DED6 /* NoteViewController.swift */,
+				42EB609E2944F43100C9DED6 /* NewNoteView.xib */,
+				42EB609C2944F41200C9DED6 /* NewNoteView.swift */,
 				42EB60812942682E00C9DED6 /* NoteTableViewCell.swift */,
 			);
 			path = NotesTab;
@@ -187,7 +212,11 @@
 			isa = PBXGroup;
 			children = (
 				42EB60862943AD9400C9DED6 /* Client.swift */,
+				42EB60A82946189300C9DED6 /* AlertError.swift */,
+				42CABFB72948CFF2005AA7BA /* GenreModel.swift */,
+				42EB60AA294618A300C9DED6 /* AlertManager.swift */,
 				42EB60882944B7C700C9DED6 /* BaseResponse.swift */,
+				42EB60AF294666B700C9DED6 /* DetailModel.swift */,
 				42EB608A2944B7EE00C9DED6 /* GameModel.swift */,
 			);
 			path = ServiceOperations;
@@ -212,6 +241,7 @@
 			packageProductDependencies = (
 				42EB608F2944C23B00C9DED6 /* MaterialActivityIndicator */,
 				42EB60922944C27100C9DED6 /* SwiftAlertView */,
+				42CABFBC294C49AF005AA7BA /* Kingfisher */,
 			);
 			productName = VideoGames;
 			productReference = 42EB60422942485B00C9DED6 /* VideoGames.app */;
@@ -288,6 +318,7 @@
 			packageReferences = (
 				42EB608E2944C23B00C9DED6 /* XCRemoteSwiftPackageReference "MaterialActivityIndicator" */,
 				42EB60912944C27100C9DED6 /* XCRemoteSwiftPackageReference "SwiftAlertView" */,
+				42CABFBB294C49AF005AA7BA /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 42EB60432942485B00C9DED6 /* Products */;
 			projectDirPath = "";
@@ -305,6 +336,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42EB609F2944F43100C9DED6 /* NewNoteView.xib in Resources */,
 				42EB60552942485C00C9DED6 /* LaunchScreen.storyboard in Resources */,
 				42EB60522942485C00C9DED6 /* Assets.xcassets in Resources */,
 				42EB604D2942485B00C9DED6 /* Main.storyboard in Resources */,
@@ -340,11 +372,19 @@
 				42EB60822942682E00C9DED6 /* NoteTableViewCell.swift in Sources */,
 				42EB608B2944B7EE00C9DED6 /* GameModel.swift in Sources */,
 				42EB60872943AD9500C9DED6 /* Client.swift in Sources */,
-				42EB607E29425FF400C9DED6 /* NotesViewController.swift in Sources */,
+				42EB607E29425FF400C9DED6 /* NoteViewController.swift in Sources */,
+				42EB60AB294618A300C9DED6 /* AlertManager.swift in Sources */,
 				42EB60482942485B00C9DED6 /* SceneDelegate.swift in Sources */,
 				42EB607C29425FE300C9DED6 /* FavouritesViewController.swift in Sources */,
+				42EB60A92946189300C9DED6 /* AlertError.swift in Sources */,
+				42EB60AE2946320D00C9DED6 /* VideoGames.xcdatamodeld in Sources */,
+				42EB60A72946181100C9DED6 /* UIApplication.swift in Sources */,
+				42CABFB82948CFF2005AA7BA /* GenreModel.swift in Sources */,
+				42EB60A12945F92600C9DED6 /* DetailsViewController.swift in Sources */,
+				42EB60B0294666B700C9DED6 /* DetailModel.swift in Sources */,
 				42EB60892944B7C700C9DED6 /* BaseResponse.swift in Sources */,
-				42EB60502942485B00C9DED6 /* VideoGames.xcdatamodeld in Sources */,
+				42EB60952944EBDE00C9DED6 /* CoreDataManager.swift in Sources */,
+				42EB609D2944F41200C9DED6 /* NewNoteView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -682,6 +722,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		42CABFBB294C49AF005AA7BA /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		42EB608E2944C23B00C9DED6 /* XCRemoteSwiftPackageReference "MaterialActivityIndicator" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/nspavlo/MaterialActivityIndicator";
@@ -701,6 +749,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		42CABFBC294C49AF005AA7BA /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42CABFBB294C49AF005AA7BA /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		42EB608F2944C23B00C9DED6 /* MaterialActivityIndicator */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 42EB608E2944C23B00C9DED6 /* XCRemoteSwiftPackageReference "MaterialActivityIndicator" */;
@@ -714,12 +767,12 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		42EB604E2942485B00C9DED6 /* VideoGames.xcdatamodeld */ = {
+		42EB60AC2946320D00C9DED6 /* VideoGames.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				42EB604F2942485B00C9DED6 /* VideoGames.xcdatamodel */,
+				42EB60AD2946320D00C9DED6 /* VideoGames.xcdatamodel */,
 			);
-			currentVersion = 42EB604F2942485B00C9DED6 /* VideoGames.xcdatamodel */;
+			currentVersion = 42EB60AD2946320D00C9DED6 /* VideoGames.xcdatamodel */;
 			path = VideoGames.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

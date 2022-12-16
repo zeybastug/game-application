@@ -6,22 +6,35 @@
 //
 
 import Foundation
+import UIKit
+import Kingfisher
 
 class Client {
     
     enum Endpoints {
-        static let base = "https://api.rawg.io/api/games?key=d0e751f5856542b9b6ced544ca35ae97"
+        static let base = "https://api.rawg.io/api/games"
         
         case games
+        case details(Int)
+        case genres(String)
+        case selectGenres
+        case search(String)
         
-        case genres
+        static let key = "key=d0e751f5856542b9b6ced544ca35ae97"
         
         var stringValue: String {
             switch self {
             case .games:
-                return Endpoints.base
-            case .genres:
-                return Endpoints.base + "/genres" //bu farklı api gibi, filtre için nasıl yapıcam?
+                return "\(Endpoints.base)?\(Endpoints.key)"
+            case .details(let id):
+                return "\(Endpoints.base)/\(id)?\(Endpoints.key)"
+            case .genres(let genre):
+                return "\(Endpoints.base)?genres=\(genre)&\(Endpoints.key)"
+//            https://api.rawg.io/api/games?genres=action&key=d0e751f5856542b9b6ced544ca35ae97
+            case .selectGenres:
+                return "https://api.rawg.io/api/genres?\(Endpoints.key)"
+            case .search(let game):
+                return "\(Endpoints.base)?search=\(game)&\(Endpoints.key)"
             }
         }
         
@@ -48,6 +61,7 @@ class Client {
                     completion(responseObject, nil)
                 }
             } catch {
+                print(error)
                 do {
                     let errorResponse = try decoder.decode(BaseResponse.self, from: data) as Error
                     DispatchQueue.main.async {
@@ -73,5 +87,64 @@ class Client {
             }
         }
     }
-}
+    class func getDetails(id:Int,completion: @escaping (DetailModel?, Error?) -> Void) {
+        taskForGETRequest(url: Endpoints.details(id).url, responsetType: DetailModel.self) { response, error in
+            if let response = response {
+                completion(response, nil)
+            } else {
+                completion(nil, error)
+            }
+        }
+    }
+    
+    class func getGenres(genre:String,completion: @escaping (Result?, Error?) -> Void) {
+        taskForGETRequest(url: Endpoints.genres(genre).url, responsetType: Result.self) { response, error in
+            if let response = response {
+                completion(response, nil)
+            } else {
+                completion(nil, error)
+            }
+        }
+    }
 
+    class func getGenreOptions(completion: @escaping (ResultModel?, Error?) -> Void) {
+        taskForGETRequest(url: Endpoints.selectGenres.url, responsetType: ResultModel.self) {response, error in
+            if let response = response {
+                completion(response, nil)
+            } else {
+                completion(nil, error)
+            }
+        }
+    }
+
+    class func getSearchedGames(game:String, completion: @escaping (Result?, Error?) -> Void) {
+        taskForGETRequest(url: Endpoints.search(game).url, responsetType: Result.self) {response, error in
+            if let response = response {
+                completion(response, nil)
+            } else {
+                completion(nil, error)
+            }
+        }
+    }
+    
+//    class func downloadImages(image:String, imageView:UIImageView){
+//       DispatchQueue.main.async {
+//           let url = URL(string: image)
+//           imageView.kf.setImage(with: url)
+//       }
+//   }
+    
+    class func setImage(onImageView image:UIImageView,withImageUrl imageUrl:String?,placeHolderImage: UIImage){
+
+            if let imgurl = imageUrl{
+                image.kf.indicatorType = IndicatorType.activity
+                image.kf.setImage(with: URL(string: imgurl), placeholder: placeHolderImage, options: nil, progressBlock: nil, completionHandler: { response in
+                })
+            }
+            else{
+                image.image = placeHolderImage
+            }
+        
+        
+        }
+}
