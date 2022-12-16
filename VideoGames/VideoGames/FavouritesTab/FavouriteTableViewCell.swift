@@ -9,15 +9,13 @@ import UIKit
 
 class FavouriteTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    
+    @IBOutlet weak var favouriteGame: UILabel!
+    
+    
+    func configureCell(model:FavouriteGame){
+        
+        favouriteGame.text = model.name
+        
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

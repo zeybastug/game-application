@@ -9,15 +9,15 @@ import UIKit
 
 class NoteTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    @IBOutlet weak var gameNameLabel: UILabel!
+    
+    @IBOutlet weak var noteLabel: UILabel!
+    
+    func configureCell(model: Note) {
+        noteLabel.text = model.noteText
+        gameNameLabel.text = model.name
+        
     }
 
 }
