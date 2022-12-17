@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GameTableViewCell: UITableViewCell {
+final class GameTableViewCell: UITableViewCell {
 
     @IBOutlet weak var gameNameLabel: UILabel!
     
@@ -24,7 +24,7 @@ class GameTableViewCell: UITableViewCell {
     func configureCell(model: GameModel) {
         gameNameLabel.text = model.name
 //        Client.downloadImages(image: model.background_image!, imageView: gameImageView)
-        Client.setImage(onImageView: gameImageView, withImageUrl: model.background_image!, placeHolderImage: UIImage())
+        Client.setImage(onImageView: gameImageView, withImageUrl: model.backgroundImage!, placeHolderImage: UIImage())
     }
 
 }

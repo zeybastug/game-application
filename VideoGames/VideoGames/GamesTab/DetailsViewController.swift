@@ -26,13 +26,13 @@ class DetailsViewController: UIViewController {
         Client.getDetails(id: (gameModel?.id)!) { [weak self] res, error in
             guard let self = self else { return }
             self.gameName.text = self.gameModel?.name
-            Client.setImage(onImageView: self.gameImage, withImageUrl: self.gameModel?.background_image!, placeHolderImage: UIImage())
+            Client.setImage(onImageView: self.gameImage, withImageUrl: self.gameModel?.backgroundImage!, placeHolderImage: UIImage())
             self.gameDescription.text = res?.description
             self.gameRating.text      = String(res?.rating ?? 0)
             self.gameRelease.text     = res?.released
             self.gameDeveloper.text   = res?.developers![0].name!
             self.gameGenre.text       = res?.genres![0].name!
-            
+            self.view.reloadInputViews()
         }
         
     }
@@ -41,7 +41,7 @@ class DetailsViewController: UIViewController {
     @IBAction func likeButton(_ sender: Any) {
         if((FavouritesViewController.favouriteList?.contains(where: { FavouriteGame in
             FavouriteGame.name == gameModel?.name
-        })) != nil)
+        }))!)
         {
             return
         }
