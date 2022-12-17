@@ -22,6 +22,7 @@ class FavouritesViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         
      FavouritesViewController.favouriteList = CoreDataManager.shared.getFavourites()
+     favouritesTableView.reloadData()
     }
 
 }

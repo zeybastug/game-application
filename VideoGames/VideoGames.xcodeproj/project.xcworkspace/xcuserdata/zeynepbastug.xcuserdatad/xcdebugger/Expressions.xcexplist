@@ -3,18 +3,13 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "GamesViewController.prepare(for:sender:):GamesViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "sender.source">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "GameTableViewCell.configureCell(model:):GameTableViewCell.swift">
       </ContextState>
       <ContextState
-         contextName = "closure #1 in static Client.taskForGETRequest&lt;&#x3c4;_0_0&gt;(url:responsetType:completion:):Client.swift">
+         contextName = "CoreDataManager.updateNote(name:note:id:):CoreDataManager.swift">
          <PersistentStrings>
             <PersistentString
-               value = "ResponseType.self">
+               value = "result[0]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -30,7 +25,21 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "DetailsViewController.viewDidLoad():DetailsViewController.swift">
+         contextName = "NewNoteView.saveButtonPressed(_:):NewNoteView.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in GamesViewController.viewDidLoad():GamesViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "NoteViewController.extractedFunc():NoteViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in static Client.taskForGETRequest&lt;&#x3c4;_0_0&gt;(url:responsetType:completion:):Client.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "ResponseType.self">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "static Client.getDetails(id:completion:):Client.swift">
@@ -41,18 +50,29 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "NewNoteView.saveButtonPressed(_:):NewNoteView.swift">
+         contextName = "DetailsViewController.viewDidLoad():DetailsViewController.swift">
       </ContextState>
       <ContextState
-         contextName = "CoreDataManager.updateNote(name:note:id:):CoreDataManager.swift">
+         contextName = "GamesViewController.tableView(_:cellForRowAt:):GamesViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "GamesViewController.prepare(for:sender:):GamesViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "result[0]">
+               value = "sender.source">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "NoteViewController.extractedFunc():NoteViewController.swift">
+         contextName = "GamesViewController.viewDidLoad():GamesViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "DetailsViewController.likeButton(_:):DetailsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "FavouritesViewController.favouriteList">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
    </ContextStates>
 </VariablesViewState>

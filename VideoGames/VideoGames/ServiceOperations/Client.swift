@@ -14,27 +14,27 @@ class Client {
     enum Endpoints {
         static let base = "https://api.rawg.io/api/games"
         
-        case games
+        case games(Int)
         case details(Int)
-        case genres(String)
+        case genres(String, Int)
         case selectGenres
-        case search(String)
+        case search(String, Int)
         
         static let key = "key=d0e751f5856542b9b6ced544ca35ae97"
         
         var stringValue: String {
             switch self {
-            case .games:
-                return "\(Endpoints.base)?\(Endpoints.key)"
+            case .games(let page):
+                return "\(Endpoints.base)?page=\(page)&\(Endpoints.key)"
             case .details(let id):
                 return "\(Endpoints.base)/\(id)?\(Endpoints.key)"
-            case .genres(let genre):
-                return "\(Endpoints.base)?genres=\(genre)&\(Endpoints.key)"
+            case .genres(let genre, let page):
+                return "\(Endpoints.base)?genres=\(genre)&page=\(page)&\(Endpoints.key)"
 //            https://api.rawg.io/api/games?genres=action&key=d0e751f5856542b9b6ced544ca35ae97
             case .selectGenres:
                 return "https://api.rawg.io/api/genres?\(Endpoints.key)"
-            case .search(let game):
-                return "\(Endpoints.base)?search=\(game)&\(Endpoints.key)"
+            case .search(let game, let page):
+                return "\(Endpoints.base)?search=\(game)&page=\(page)&\(Endpoints.key)"
             }
         }
         
@@ -78,8 +78,8 @@ class Client {
         return task
     }
     
-    class func getGames(completion: @escaping (Result?, Error?) -> Void) {
-        taskForGETRequest(url: Endpoints.games.url, responsetType: Result.self) { response, error in
+    class func getGames(page:Int, completion: @escaping (Result?, Error?) -> Void) {
+        taskForGETRequest(url: Endpoints.games(page).url, responsetType: Result.self) { response, error in
             if let response = response {
                 completion(response, nil)
             } else {
@@ -97,8 +97,8 @@ class Client {
         }
     }
     
-    class func getGenres(genre:String,completion: @escaping (Result?, Error?) -> Void) {
-        taskForGETRequest(url: Endpoints.genres(genre).url, responsetType: Result.self) { response, error in
+    class func getGamesByGenre(page:Int, genre:String,completion: @escaping (Result?, Error?) -> Void) {
+        taskForGETRequest(url: Endpoints.genres(genre,page).url, responsetType: Result.self) { response, error in
             if let response = response {
                 completion(response, nil)
             } else {
@@ -117,8 +117,8 @@ class Client {
         }
     }
 
-    class func getSearchedGames(game:String, completion: @escaping (Result?, Error?) -> Void) {
-        taskForGETRequest(url: Endpoints.search(game).url, responsetType: Result.self) {response, error in
+    class func getSearchedGames(page:Int, game:String, completion: @escaping (Result?, Error?) -> Void) {
+        taskForGETRequest(url: Endpoints.search(game, page).url, responsetType: Result.self) {response, error in
             if let response = response {
                 completion(response, nil)
             } else {
