@@ -25,12 +25,12 @@ This application is developed with Swift programming language.
 Tests are done with iPhone 14 Pro, iPhone 13 and iPhone 12 simulators.
 
 *ScreenShots*
-![Simulator Screen Shot - iphone13 - 2022-12-18 at 23 39 57](https://user-images.githubusercontent.com/102912212/208318834-c0256667-2a7f-4118-b0a2-b375792d964e.png=250x250)
-![Simulator Screen Shot - iphone13 - 2022-12-18 at 23 52 35](https://user-images.githubusercontent.com/102912212/208318843-69a33287-938b-49fb-b94b-47579a687406.png=250x250)
-![Simulator Screen Shot - iphone13 - 2022-12-18 at 23 36 34](https://user-images.githubusercontent.com/102912212/208318854-38af674e-aa40-4d21-925d-375046dcac62.png=250x250)
-![Simulator Screen Shot - iphone13 - 2022-12-18 at 23 35 45](https://user-images.githubusercontent.com/102912212/208318870-c2acb7dd-159b-4b13-9250-5bcf738d86b9.png=250x250)
-![Simulator Screen Shot - iphone13 - 2022-12-18 at 23 36 27](https://user-images.githubusercontent.com/102912212/208318875-e9a498d0-d818-42ed-bc8a-6d50f46ca98d.png=250x250)
-![Simulator Screen Shot - iphone13 - 2022-12-18 at 23 52 01](https://user-images.githubusercontent.com/102912212/208318921-0ffe0cd9-5c2f-42c8-8ca5-65f09ad07fc5.png=250x250)
+![Simulator Screen Shot - iphone13 - 2022-12-18 at 23 39 57](https://user-images.githubusercontent.com/102912212/208318834-c0256667-2a7f-4118-b0a2-b375792d964e.png =250x250)
+![Simulator Screen Shot - iphone13 - 2022-12-18 at 23 52 35](https://user-images.githubusercontent.com/102912212/208318843-69a33287-938b-49fb-b94b-47579a687406.png =250x250)
+![Simulator Screen Shot - iphone13 - 2022-12-18 at 23 36 34](https://user-images.githubusercontent.com/102912212/208318854-38af674e-aa40-4d21-925d-375046dcac62.png =250x250)
+![Simulator Screen Shot - iphone13 - 2022-12-18 at 23 35 45](https://user-images.githubusercontent.com/102912212/208318870-c2acb7dd-159b-4b13-9250-5bcf738d86b9.png =250x250)
+![Simulator Screen Shot - iphone13 - 2022-12-18 at 23 36 27](https://user-images.githubusercontent.com/102912212/208318875-e9a498d0-d818-42ed-bc8a-6d50f46ca98d.png =250x250)
+![Simulator Screen Shot - iphone13 - 2022-12-18 at 23 52 01](https://user-images.githubusercontent.com/102912212/208318921-0ffe0cd9-5c2f-42c8-8ca5-65f09ad07fc5.png =250x250)
 
 
 
