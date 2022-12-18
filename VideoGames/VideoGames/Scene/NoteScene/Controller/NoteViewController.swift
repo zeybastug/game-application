@@ -10,11 +10,15 @@ import CoreData
 
 
 final class NoteViewController: BaseViewController {
-
+    
     @IBOutlet weak var noteListTableView: UITableView!
     var notes: [Note] = []
     
-     private let floatingButton: UIButton = {
+    @IBOutlet weak var addNoteButton: UIButton!
+    
+    var cellSpacingHeight:CGFloat = 10 // TableView Cell Space
+    
+    private let floatingButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
         button.layer.masksToBounds = true
         button.layer.cornerRadius = 30
@@ -26,7 +30,7 @@ final class NoteViewController: BaseViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        floatingButton.frame = CGRect(x: noteListTableView.frame.size.width-60, y: noteListTableView.frame.size.width, width: 60, height: 60)
+        floatingButton.frame = CGRect(x: view.frame.size.width-60, y: view.frame.size.height-175, width: 60, height: 60)
     }
     
     fileprivate func createNewNoteView() -> NewNoteViewModel {
@@ -44,25 +48,44 @@ final class NoteViewController: BaseViewController {
         var newNoteView = createNewNoteView()
         view.addSubview(newNoteView)
     }
-        
-    override func viewDidLoad() {
-            super.viewDidLoad()
-            notes = CoreDataManager.shared.getNotes()
-            configureTableView()
-            floatingButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
-            noteListTableView.addSubview(floatingButton)
-        }
-        
-        private func configureTableView() {
-            noteListTableView.delegate = self
-            noteListTableView.dataSource = self
-            noteListTableView.estimatedRowHeight = UITableView.automaticDimension
-        }
     
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        addNoteButton.isEnabled = false
+        addNoteButton.layer.cornerRadius = 5
+        self.noteListTableView.backgroundColor = UIColor(named: "naviColor")
+        
+        notes = CoreDataManager.shared.getNotes()
+        configureTableView()
+        floatingButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+        noteListTableView.addSubview(floatingButton)
     }
+    
+    private func configureTableView() {
+        noteListTableView.delegate = self
+        noteListTableView.dataSource = self
+        noteListTableView.estimatedRowHeight = UITableView.automaticDimension
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.items![0].title =         navigationController?.navigationBar.items![0].title?.localizableString(GamesViewController.selectedLanguage)
+    }
+    
+    
+    
+    @IBAction func addNoteAction(_ sender: Any) {
+        var newNoteView = createNewNoteView()
+        view.addSubview(newNoteView)
+    }
+    
+    
+}
 
 extension NoteViewController: NewNoteViewDelegate {
-  
+    
     
     
     func saveUpdatePressed(note:Note,name:String,noteText:String) {
@@ -74,9 +97,9 @@ extension NoteViewController: NewNoteViewDelegate {
     
     func savePressed(input: String, name:String, id:Int64) {
         notes.append(CoreDataManager.shared.saveNote(text: input, name:name,id: id)!)
-            noteListTableView.reloadData()
-        }
+        noteListTableView.reloadData()
     }
+}
 
 extension NoteViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -85,14 +108,21 @@ extension NoteViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "noteCell", for: indexPath) as? NoteTableViewCell else {
+            
             return UITableViewCell()
         }
+        
+        cell.backgroundColor = UIColor(named: "cellColor")
+        cell.layer.borderColor = UIColor.black.cgColor
+        cell.layer.borderWidth = 1
+        cell.layer.cornerRadius = 8
+        cell.clipsToBounds = true
         cell.configureCell(model: notes[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var noteView = createNewNoteView()
+        let noteView = createNewNoteView()
         noteView.id = notes[indexPath.row].id
         noteView.selectGameTextView.text = notes[indexPath.row].name
         noteView.newNoteTextView.text = notes[indexPath.row].noteText
@@ -104,7 +134,7 @@ extension NoteViewController: UITableViewDataSource, UITableViewDelegate {
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        UITableView.automaticDimension
+        return 85
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

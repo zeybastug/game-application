@@ -10,9 +10,7 @@ import UIKit
 class DetailsViewController: UIViewController {
     
     @IBOutlet weak var gameName: UILabel!
-   
     @IBOutlet weak var gameDescription: UITextView!
-    
     @IBOutlet weak var gameRating: UILabel!
     @IBOutlet weak var gameRelease: UILabel!
     @IBOutlet weak var gameDeveloper: UILabel!
@@ -21,7 +19,6 @@ class DetailsViewController: UIViewController {
     
     var gameModel:GameModel?
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,18 +27,16 @@ class DetailsViewController: UIViewController {
             self.gameName.text = self.gameModel?.name
             Client.setImage(onImageView: self.gameImage, withImageUrl: self.gameModel?.backgroundImage!, placeHolderImage: UIImage())
             self.gameDescription.text = res?.description
+            self.gameDescription.isEditable = false
             self.gameRating.text      = String(res?.rating ?? 0)
             self.gameRelease.text     = res?.released
             self.gameDeveloper.text   = res?.developers![0].name!
             self.gameGenre.text       = res?.genres![0].name!
             self.view.reloadInputViews()
         }
-        
     }
     
-    
-    @IBAction func likeButton(_ sender: Any) {
-        
+    func likeAction() {
         if((FavouritesViewController.favouriteList?.contains(where: { FavouriteGame in
             FavouriteGame.name == gameModel?.name
         }))!)
@@ -49,10 +44,10 @@ class DetailsViewController: UIViewController {
             return
         }
         CoreDataManager.shared.addToFavourites(name: (gameModel?.name)!)
-        
     }
     
-
-   
-
+    @IBAction func likeButton(_ sender: Any) {
+        
+        likeAction()
+    }
 }

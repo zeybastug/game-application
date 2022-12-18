@@ -16,7 +16,7 @@ extension UIApplication {
     ///    - base: Base view controller, it is the rootViewController of current window by default.
     /// - Returns: a *CGFloat* represents the width of the current string.
     public class func topViewController(base: UIViewController? =
-        UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
+                                        UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
         if let nav = base as? UINavigationController {
             return topViewController(base: nav.visibleViewController)
         } else if let tab = base as? UITabBarController, let selected = tab.selectedViewController {

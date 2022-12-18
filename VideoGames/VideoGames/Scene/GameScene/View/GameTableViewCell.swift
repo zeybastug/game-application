@@ -10,15 +10,12 @@ import UIKit
 final class GameTableViewCell: UITableViewCell {
     
     @IBOutlet weak var gameNameLabel: UILabel!
-    
     @IBOutlet weak var gameImageView: UIImageView!
     @IBOutlet weak var likeImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
-    
     
     func configureCell(model: GameModel) {
         gameNameLabel.text = model.name

@@ -30,9 +30,14 @@
                     <color key="textColor" systemColor="labelColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                    </userDefinedRuntimeAttributes>
                 </textView>
                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ukv-rm-HmV">
                     <rect key="frame" x="25" y="177.33333333333337" width="250" height="162"/>
+                    <color key="backgroundColor" name="viewColor"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="162" id="e00-wx-6PU"/>
                     </constraints>
@@ -42,8 +47,7 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="70" id="rTY-Cq-ru6"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lFc-xt-JGJ">
@@ -55,6 +59,9 @@
                     <color key="textColor" systemColor="labelColor"/>
                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                    </userDefinedRuntimeAttributes>
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQv-q1-9on">
                     <rect key="frame" x="111" y="354" width="78" height="26"/>
@@ -62,25 +69,51 @@
                         <constraint firstAttribute="height" constant="26" id="pO5-bA-dwK"/>
                     </constraints>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="tinted" title="Add">
-                        <color key="baseBackgroundColor" name="buttonColorr"/>
+                    <buttonConfiguration key="configuration" style="tinted" title="Add" cornerStyle="dynamic">
+                        <color key="baseBackgroundColor" systemColor="systemBackgroundColor"/>
                     </buttonConfiguration>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="saveButtonPressed:" destination="-1" eventType="touchUpInside" id="KgI-jb-hZh"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Note" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xf1-uw-e8I">
+                    <rect key="frame" x="113" y="13" width="74" height="14"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="14" id="WSb-WI-XHb"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahz-Eh-SIK">
+                    <rect key="frame" x="264" y="4" width="36" height="23"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="clear" catalog="system">
+                        <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="closeNewNoteView:" destination="-1" eventType="touchUpInside" id="Kki-Km-bQW"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" name="selectColor"/>
+            <color key="backgroundColor" name="viewColor"/>
+            <color key="tintColor" systemColor="labelColor"/>
             <constraints>
+                <constraint firstItem="Xf1-uw-e8I" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="13" id="0uX-FX-2ud"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="zHo-Ao-n4W" secondAttribute="trailing" constant="33" id="5wr-Ir-H3w"/>
                 <constraint firstItem="ukv-rm-HmV" firstAttribute="top" secondItem="lFc-xt-JGJ" secondAttribute="bottom" constant="23" id="7RE-aQ-rt9"/>
                 <constraint firstItem="zHo-Ao-n4W" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="35" id="9aF-Rk-0CE"/>
                 <constraint firstItem="zHo-Ao-n4W" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="33" id="ICQ-kR-GVo"/>
                 <constraint firstItem="Okj-Zq-kgW" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="33" id="MtU-hm-Pfk"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="WQv-q1-9on" secondAttribute="trailing" constant="111" id="Rfx-4f-dG5"/>
+                <constraint firstAttribute="trailing" secondItem="Xf1-uw-e8I" secondAttribute="trailing" constant="113" id="ZYV-xI-rmu"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="lFc-xt-JGJ" secondAttribute="trailing" constant="32" id="d2d-8Z-HgS"/>
                 <constraint firstItem="WQv-q1-9on" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="111" id="e4w-yS-dwB"/>
+                <constraint firstItem="Xf1-uw-e8I" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="113" id="edT-aG-myG"/>
                 <constraint firstItem="WQv-q1-9on" firstAttribute="top" secondItem="ukv-rm-HmV" secondAttribute="bottom" constant="14.67" id="izs-Q4-9uL"/>
                 <constraint firstItem="Okj-Zq-kgW" firstAttribute="top" secondItem="zHo-Ao-n4W" secondAttribute="bottom" constant="25" id="ouj-ua-vKf"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ukv-rm-HmV" secondAttribute="trailing" constant="25" id="qZz-FF-tW6"/>
@@ -89,15 +122,16 @@
                 <constraint firstItem="ukv-rm-HmV" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="25" id="wIR-MD-HAg"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+            </userDefinedRuntimeAttributes>
             <point key="canvasLocation" x="6.1068702290076331" y="19.718309859154932"/>
         </view>
     </objects>
     <resources>
-        <namedColor name="buttonColorr">
-            <color red="0.047058823529411764" green="0.6705882352941176" blue="0.6588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="selectColor">
-            <color red="0.0040000001899898052" green="0.34900000691413879" blue="0.3449999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="clear" catalog="system" width="128" height="114"/>
+        <namedColor name="viewColor">
+            <color red="0.90196078431372551" green="0.60784313725490191" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
