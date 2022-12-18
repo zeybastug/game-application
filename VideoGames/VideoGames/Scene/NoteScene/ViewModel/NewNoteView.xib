@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewNoteViewModel" customModule="VideoGames" customModuleProvider="target">
+            <connections>
+                <outlet property="newNoteTextView" destination="zHo-Ao-n4W" id="WAr-jD-re7"/>
+                <outlet property="pickerView" destination="ukv-rm-HmV" id="JyC-Mq-yod"/>
+                <outlet property="selectGameTextView" destination="lFc-xt-JGJ" id="UwY-EO-qw0"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="400"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zHo-Ao-n4W">
+                    <rect key="frame" x="33" y="35" width="234" height="70"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="SEL-EA-72n"/>
+                    </constraints>
+                    <color key="textColor" systemColor="labelColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ukv-rm-HmV">
+                    <rect key="frame" x="25" y="177.33333333333337" width="250" height="162"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="162" id="e00-wx-6PU"/>
+                    </constraints>
+                </pickerView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Okj-Zq-kgW">
+                    <rect key="frame" x="33" y="130" width="70" height="13.333333333333343"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="rTY-Cq-ru6"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lFc-xt-JGJ">
+                    <rect key="frame" x="111" y="124.99999999999999" width="157" height="29.333333333333329"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="157" id="tbz-Hl-ocl"/>
+                    </constraints>
+                    <color key="textColor" systemColor="labelColor"/>
+                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQv-q1-9on">
+                    <rect key="frame" x="111" y="354" width="78" height="26"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="26" id="pO5-bA-dwK"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="tinted" title="Add">
+                        <color key="baseBackgroundColor" name="buttonColorr"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="saveButtonPressed:" destination="-1" eventType="touchUpInside" id="KgI-jb-hZh"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" name="selectColor"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="zHo-Ao-n4W" secondAttribute="trailing" constant="33" id="5wr-Ir-H3w"/>
+                <constraint firstItem="ukv-rm-HmV" firstAttribute="top" secondItem="lFc-xt-JGJ" secondAttribute="bottom" constant="23" id="7RE-aQ-rt9"/>
+                <constraint firstItem="zHo-Ao-n4W" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="35" id="9aF-Rk-0CE"/>
+                <constraint firstItem="zHo-Ao-n4W" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="33" id="ICQ-kR-GVo"/>
+                <constraint firstItem="Okj-Zq-kgW" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="33" id="MtU-hm-Pfk"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="WQv-q1-9on" secondAttribute="trailing" constant="111" id="Rfx-4f-dG5"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="lFc-xt-JGJ" secondAttribute="trailing" constant="32" id="d2d-8Z-HgS"/>
+                <constraint firstItem="WQv-q1-9on" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="111" id="e4w-yS-dwB"/>
+                <constraint firstItem="WQv-q1-9on" firstAttribute="top" secondItem="ukv-rm-HmV" secondAttribute="bottom" constant="14.67" id="izs-Q4-9uL"/>
+                <constraint firstItem="Okj-Zq-kgW" firstAttribute="top" secondItem="zHo-Ao-n4W" secondAttribute="bottom" constant="25" id="ouj-ua-vKf"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ukv-rm-HmV" secondAttribute="trailing" constant="25" id="qZz-FF-tW6"/>
+                <constraint firstItem="ukv-rm-HmV" firstAttribute="top" secondItem="Okj-Zq-kgW" secondAttribute="bottom" constant="34" id="r4m-jL-d9L"/>
+                <constraint firstItem="lFc-xt-JGJ" firstAttribute="top" secondItem="zHo-Ao-n4W" secondAttribute="bottom" constant="20" id="r5g-gn-Y6u"/>
+                <constraint firstItem="ukv-rm-HmV" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="25" id="wIR-MD-HAg"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="6.1068702290076331" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="buttonColorr">
+            <color red="0.047058823529411764" green="0.6705882352941176" blue="0.6588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="selectColor">
+            <color red="0.0040000001899898052" green="0.34900000691413879" blue="0.3449999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

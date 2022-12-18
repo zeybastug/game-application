@@ -1,12 +1,12 @@
 
 /* Class = "UIButton"; configuration.title = "Search"; ObjectID = "11H-gh-OFA"; */
-"11H-gh-OFA.configuration.title" = "Arama";
+"11H-gh-OFA.configuration.title" = "Search";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "11H-gh-OFA"; */
 "11H-gh-OFA.normalTitle" = "Button";
 
 /* Class = "UITabBarItem"; title = "Notes"; ObjectID = "Cpo-pz-5Fy"; */
-"Cpo-pz-5Fy.title" = "Notlar";
+"Cpo-pz-5Fy.title" = "Notes";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "DCH-7g-3of"; */
 "DCH-7g-3of.text" = "Label";
@@ -14,11 +14,11 @@
 /* Class = "UILabel"; text = "Label"; ObjectID = "EGj-WB-OZ9"; */
 "EGj-WB-OZ9.text" = "Label";
 
-/* Class = "UIBarButtonItem"; title = "Filter"; ObjectID = "Fb3-be-hTy"; */
-"Fb3-be-hTy.title" = "Filtre";
+/* Class = "UITextField"; placeholder = "Sort"; ObjectID = "GzB-f5-6sB"; */
+"GzB-f5-6sB.placeholder" = "Sort";
 
 /* Class = "UITextField"; placeholder = "Enter the Game Name"; ObjectID = "Iaa-kF-i3q"; */
-"Iaa-kF-i3q.placeholder" = "Oyun adını gir";
+"Iaa-kF-i3q.placeholder" = "Enter the Game Name";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "JQD-In-Zv5"; */
 "JQD-In-Zv5.text" = "Label";
@@ -27,7 +27,7 @@
 "Off-fn-5R6.text" = "Label";
 
 /* Class = "UINavigationItem"; title = "Favourites"; ObjectID = "S5o-Xv-3cR"; */
-"S5o-Xv-3cR.title" = "Favoriler";
+"S5o-Xv-3cR.title" = "Favourites";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "VLv-KN-VS5"; */
 "VLv-KN-VS5.text" = "Label";
@@ -42,22 +42,31 @@
 "anc-be-6w8.text" = "Label";
 
 /* Class = "UILabel"; text = "Game Name"; ObjectID = "daY-rp-ovh"; */
-"daY-rp-ovh.text" = "Oyun İsmi";
+"daY-rp-ovh.text" = "Game Name";
+
+/* Class = "UISegmentedControl"; gf2-Vy-fec.segmentTitles[0] = "TR"; ObjectID = "gf2-Vy-fec"; */
+"gf2-Vy-fec.segmentTitles[0]" = "TR";
+
+/* Class = "UISegmentedControl"; gf2-Vy-fec.segmentTitles[1] = "EN"; ObjectID = "gf2-Vy-fec"; */
+"gf2-Vy-fec.segmentTitles[1]" = "EN";
 
 /* Class = "UITabBarItem"; title = "Favourites"; ObjectID = "hXy-qC-yyU"; */
-"hXy-qC-yyU.title" = "Favoriler";
+"hXy-qC-yyU.title" = "Favourites";
 
 /* Class = "UINavigationItem"; title = "Notes"; ObjectID = "hk6-Cq-Amw"; */
-"hk6-Cq-Amw.title" = "Notlar";
+"hk6-Cq-Amw.title" = "Notes";
 
 /* Class = "UINavigationItem"; title = "Video Games "; ObjectID = "nJr-gC-Aac"; */
-"nJr-gC-Aac.title" = "Oyunlar ";
+"nJr-gC-Aac.title" = "Video Games ";
 
 /* Class = "UITabBarItem"; title = "Game List"; ObjectID = "syU-nf-LA7"; */
-"syU-nf-LA7.title" = "Oyun Listesi";
+"syU-nf-LA7.title" = "Game List";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "uQ8-GU-gJg"; */
 "uQ8-GU-gJg.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Filter"; ObjectID = "un9-4C-bJl"; */
+"un9-4C-bJl.placeholder" = "Filter";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "yJ7-zO-0hf"; */
 "yJ7-zO-0hf.text" = "Label";
