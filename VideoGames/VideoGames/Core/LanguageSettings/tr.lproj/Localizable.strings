@@ -1,0 +1,29 @@
+
+
+"All Games" = "Tüm Oyunlar"                            ;
+"Action" = "Aksiyon";
+"Indie"     = "Bağımsız";
+"Adventure" = "Macera";
+"RPG"= "RYO";
+"Strategy" = "Strateji";
+"Shooter"     = "Nişancı";
+"Casual" = "Gündelik";
+"Simulation" = "Simülasyon";
+"Puzzle" = "Bilmece";
+"Arcade" = "Vur-Kır";
+"Platformer" ="Platformer";
+"Racing" = "Yarış";
+"Massively Multiplayer" = "Çok oyunculu";
+"Sports" = "Sports";
+"Fighting" = "Kawga";
+"Family" = "Aile";
+"Board Games" = "Masa Oyunları";
+"Educational" = "Eğitimsel";
+"Card" = "Kart";
+"Name" = "İsim";
+"Release Date" = "Yayın Tarihi";
+"Rating" = "Derece";
+"Filter" = "Filtre";
+"Ok"="Tamam";
+"Value cannot be blank. Please enter a value."="Alan boş bırakılamaz. Lütfen bir değer giriniz.";
+"Please enter a valid value."="Lütfen geçerli bir değer giriniz.";
