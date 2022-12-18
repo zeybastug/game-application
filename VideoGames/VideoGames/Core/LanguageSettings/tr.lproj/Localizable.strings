@@ -24,6 +24,15 @@
 "Release Date" = "Yayın Tarihi";
 "Rating" = "Derece";
 "Filter" = "Filtre";
+"Sort" = "Sırala";
+"Check the latest games."="Son çıkan oyunları gördünüz mü ?";
 "Ok"="Tamam";
 "Value cannot be blank. Please enter a value."="Alan boş bırakılamaz. Lütfen bir değer giriniz.";
 "Please enter a valid value."="Lütfen geçerli bir değer giriniz.";
+"Enter the Game Name" = "Bir Oyun İsmi Giriniz";
+"Search" = "Ara";
+"Game List" = "Oyun Listesi" ;
+"Favourites" = "Favoriler";
+"Notes" = "Notlar";
+"Video Games" = "Video Oyunları";
+

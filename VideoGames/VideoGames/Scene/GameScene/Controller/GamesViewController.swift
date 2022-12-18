@@ -9,7 +9,7 @@ import UIKit
 import Kingfisher
 
 class GamesViewController: BaseViewController,GameViewModelDelegate {
-  
+    
     @IBOutlet weak var filterTextField: UITextField! {
         didSet {
             filterTextField.delegate = self
@@ -21,6 +21,8 @@ class GamesViewController: BaseViewController,GameViewModelDelegate {
             sortTextField.delegate = self
         }
     }
+    
+    @IBOutlet weak var searchButton: UIButton!
     
     @IBOutlet weak var filterGamesButton: UIBarButtonItem!
     
@@ -50,22 +52,29 @@ class GamesViewController: BaseViewController,GameViewModelDelegate {
     
     static var selectedLanguage = "en"
     
+    var cellSpacingHeight:CGFloat = 10 // TableView Cell Space
+    
     let activityView = UIActivityIndicatorView(style: .large)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.gamesTableView.backgroundColor = UIColor(named: "naviColor")
+        
         gameViewModel.delegate = self
         pickerView = UIPickerView()
-        NotificationManager.shared.scheduleNotification(notificationType: "OÇB")
         gameViewModel.setupGenreOptions()
         filterTextField.inputView = pickerView
         sortTextField.inputView = pickerView
-        FavouritesViewController.favouriteList = CoreDataManager.shared.getFavourites()
         activityView.center = view.center
         view.addSubview(activityView)
         activityView.startAnimating()
         gameViewModel.getAllGameWithActivity(activityView,tableView: gamesTableView)
         
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        FavouritesViewController.favouriteList = CoreDataManager.shared.getFavourites()
+        gamesTableView.reloadData()
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -74,7 +83,6 @@ class GamesViewController: BaseViewController,GameViewModelDelegate {
             if (isLoading) {
                 return
             }
-            page+=1
             isLoading = true
             gameViewModel.fetchScrolledGame(tableView: gamesTableView)
         }
@@ -91,8 +99,7 @@ class GamesViewController: BaseViewController,GameViewModelDelegate {
         }
     }
     
-    @IBAction func searchButton(_ sender: Any) {
-        page = 1
+    @IBAction func onSearchButton(_ sender: Any) {
         let replaced = searchTextField.text!.replacingOccurrences(of: " ", with: "-")
         gameViewModel.selectedSearch = replaced
         gameViewModel.getFilteredGames(tableView: gamesTableView)
@@ -104,6 +111,12 @@ class GamesViewController: BaseViewController,GameViewModelDelegate {
         switch sender.selectedSegmentIndex {
         case 1:
             GamesViewController.selectedLanguage = "tr"
+            tabBarController?.tabBar.items![0].title =  tabBarController?.tabBar.items![0].title!.localizableString("tr")
+            tabBarController?.tabBar.items![1].title =  tabBarController?.tabBar.items![1].title!.localizableString("tr")
+            tabBarController?.tabBar.items![2].title =  tabBarController?.tabBar.items![2].title!.localizableString("tr")
+            navigationController?.navigationBar.items![0].title = navigationController?.navigationBar.items![0].title?.localizableString("tr")
+            
+            searchButton.titleLabel?.text = searchButton.titleLabel?.text?.localizableString("tr")
             searchTextField.text = searchTextField.text?.localizableString("tr")
             searchTextField.placeholder = searchTextField.placeholder?.localizableString("tr")
             filterTextField.text = filterTextField.text?.localizableString("tr")
@@ -113,8 +126,15 @@ class GamesViewController: BaseViewController,GameViewModelDelegate {
             view.reloadInputViews()
             gamesTableView.reloadData()
             pickerView.reloadAllComponents()
+            
         case 0:
             GamesViewController.selectedLanguage = "en"
+            tabBarController?.tabBar.items![0].title =  tabBarController?.tabBar.items![0].title!.localizableString("en")
+            tabBarController?.tabBar.items![1].title =  tabBarController?.tabBar.items![1].title!.localizableString("en")
+            tabBarController?.tabBar.items![2].title =  tabBarController?.tabBar.items![2].title!.localizableString("en")
+            navigationController?.navigationBar.items![0].title = navigationController?.navigationBar.items![0].title?.localizableString("en")
+            
+            searchButton.titleLabel?.text = searchButton.titleLabel?.text?.localizableString("en")
             searchTextField.text = searchTextField.text?.localizableString("en")
             searchTextField.placeholder = searchTextField.placeholder?.localizableString("en")
             filterTextField.text = filterTextField.text?.localizableString("en")
@@ -132,6 +152,11 @@ class GamesViewController: BaseViewController,GameViewModelDelegate {
 
 extension GamesViewController: UITableViewDataSource, UITableViewDelegate {
     
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return cellSpacingHeight
+    }
+   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         GamesViewController.games.count
     }
@@ -139,6 +164,13 @@ extension GamesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = gamesTableView.dequeueReusableCell(withIdentifier: "gameCell", for: indexPath) as! GameTableViewCell
+        
+        cell.backgroundColor = UIColor(named: "cellColor")
+        cell.layer.borderColor = UIColor.black.cgColor
+        cell.layer.borderWidth = 1
+        cell.layer.cornerRadius = 8
+        cell.clipsToBounds = true
+        
         
         if ((FavouritesViewController.favouriteList?.contains(where: { FavouriteGame in
             FavouriteGame.name == GamesViewController.games[indexPath.row].name
@@ -186,7 +218,6 @@ extension GamesViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        page = 1
         if(pickerView.tag == 0)
         {
             GamesViewController.games = gameViewModel.sortOptions[row].sortedList

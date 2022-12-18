@@ -21,7 +21,7 @@ extension AlertError: CustomStringConvertible {
         case .wrongInput:
             return "Please enter a valid value.".localizableString(GamesViewController.selectedLanguage)
         case .success:
-           return "Başarılı".localizableString(GamesViewController.selectedLanguage)
+            return "Success".localizableString(GamesViewController.selectedLanguage)
         }
     }
 }

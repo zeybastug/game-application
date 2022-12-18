@@ -50,11 +50,11 @@ final class CoreDataManager {
         let fetchedNote = managedContext.object(with: note.objectID)
         fetchedNote.setValue(name, forKey: "name")
         fetchedNote.setValue(noteText, forKey: "noteText")
-               do {
-                   try managedContext.save()
-               } catch let error as NSError {
-                   print(error.localizedDescription)
-              }
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
     }
     
     func deleteNote(note:Note){
@@ -65,7 +65,7 @@ final class CoreDataManager {
             try managedContext.save()
         } catch let error as NSError {
             print(error.localizedDescription)
-       }
+        }
     }
     
     func addToFavourites(name:String) {
@@ -79,7 +79,18 @@ final class CoreDataManager {
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
+        
+    }
     
+    func deleteFav(fav:FavouriteGame){
+        
+        let deletedFav = managedContext.object(with: fav.objectID)
+        managedContext.delete(deletedFav)
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
     }
     
     func getFavourites() -> [FavouriteGame] {

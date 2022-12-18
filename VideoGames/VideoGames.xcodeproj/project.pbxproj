@@ -11,15 +11,15 @@
 		42CABFBD294C49AF005AA7BA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 42CABFBC294C49AF005AA7BA /* Kingfisher */; };
 		42CABFCE294E3DC2005AA7BA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42CABFD0294E3DC2005AA7BA /* Localizable.strings */; };
 		42CABFD5294E4B85005AA7BA /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CABFD4294E4B85005AA7BA /* NotificationManager.swift */; };
-		42CABFEA294E68D3005AA7BA /* FavouriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CABFE9294E68D3005AA7BA /* FavouriteViewModel.swift */; };
 		42CABFEC294E695F005AA7BA /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CABFEB294E695F005AA7BA /* GameViewModel.swift */; };
+		42CABFF2294F9BAA005AA7BA /* DetailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CABFEF294F9BAA005AA7BA /* DetailTests.swift */; };
+		42CABFF3294F9BAA005AA7BA /* VideoGamesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CABFF0294F9BAA005AA7BA /* VideoGamesTests.swift */; };
 		42EB60462942485B00C9DED6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB60452942485B00C9DED6 /* AppDelegate.swift */; };
 		42EB60482942485B00C9DED6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB60472942485B00C9DED6 /* SceneDelegate.swift */; };
 		42EB604A2942485B00C9DED6 /* GamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB60492942485B00C9DED6 /* GamesViewController.swift */; };
 		42EB604D2942485B00C9DED6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42EB604B2942485B00C9DED6 /* Main.storyboard */; };
 		42EB60522942485C00C9DED6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42EB60512942485C00C9DED6 /* Assets.xcassets */; };
 		42EB60552942485C00C9DED6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42EB60532942485C00C9DED6 /* LaunchScreen.storyboard */; };
-		42EB60602942485C00C9DED6 /* VideoGamesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB605F2942485C00C9DED6 /* VideoGamesTests.swift */; };
 		42EB606A2942485C00C9DED6 /* VideoGamesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB60692942485C00C9DED6 /* VideoGamesUITests.swift */; };
 		42EB606C2942485C00C9DED6 /* VideoGamesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB606B2942485C00C9DED6 /* VideoGamesUITestsLaunchTests.swift */; };
 		42EB607C29425FE300C9DED6 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB607B29425FE300C9DED6 /* FavouritesViewController.swift */; };
@@ -66,8 +66,9 @@
 		42CABFCF294E3DC2005AA7BA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		42CABFD3294E4222005AA7BA /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		42CABFD4294E4B85005AA7BA /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
-		42CABFE9294E68D3005AA7BA /* FavouriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewModel.swift; sourceTree = "<group>"; };
 		42CABFEB294E695F005AA7BA /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		42CABFEF294F9BAA005AA7BA /* DetailTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTests.swift; sourceTree = "<group>"; };
+		42CABFF0294F9BAA005AA7BA /* VideoGamesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoGamesTests.swift; sourceTree = "<group>"; };
 		42EB60422942485B00C9DED6 /* VideoGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42EB60452942485B00C9DED6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42EB60472942485B00C9DED6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,7 +78,6 @@
 		42EB60542942485C00C9DED6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42EB60562942485C00C9DED6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42EB605B2942485C00C9DED6 /* VideoGamesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoGamesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		42EB605F2942485C00C9DED6 /* VideoGamesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoGamesTests.swift; sourceTree = "<group>"; };
 		42EB60652942485C00C9DED6 /* VideoGamesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoGamesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42EB60692942485C00C9DED6 /* VideoGamesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoGamesUITests.swift; sourceTree = "<group>"; };
 		42EB606B2942485C00C9DED6 /* VideoGamesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoGamesUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -173,7 +173,6 @@
 			isa = PBXGroup;
 			children = (
 				42CABFDF294E64BE005AA7BA /* Model */,
-				42CABFDE294E64B7005AA7BA /* ViewModel */,
 				42CABFDD294E64AE005AA7BA /* Controller */,
 			);
 			path = DetailScene;
@@ -185,7 +184,6 @@
 				42CABFE7294E6577005AA7BA /* View */,
 				42CABFE2294E64D0005AA7BA /* Controller */,
 				42CABFE1294E64CB005AA7BA /* ViewModel */,
-				42CABFE0294E64C5005AA7BA /* Model */,
 			);
 			path = NoteScene;
 			sourceTree = "<group>";
@@ -194,8 +192,6 @@
 			isa = PBXGroup;
 			children = (
 				42CABFE6294E653A005AA7BA /* View */,
-				42CABFE5294E64E7005AA7BA /* Model */,
-				42CABFE4294E64E0005AA7BA /* ViewModel */,
 				42CABFE3294E64D8005AA7BA /* Controller */,
 			);
 			path = FavoriteScene;
@@ -234,24 +230,10 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		42CABFDE294E64B7005AA7BA /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		42CABFDF294E64BE005AA7BA /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				42EB60AF294666B700C9DED6 /* DetailModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		42CABFE0294E64C5005AA7BA /* Model */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -279,21 +261,6 @@
 				42EB607B29425FE300C9DED6 /* FavouritesViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		42CABFE4294E64E0005AA7BA /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				42CABFE9294E68D3005AA7BA /* FavouriteViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		42CABFE5294E64E7005AA7BA /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		42CABFE6294E653A005AA7BA /* View */ = {
@@ -365,7 +332,8 @@
 		42EB605E2942485C00C9DED6 /* VideoGamesTests */ = {
 			isa = PBXGroup;
 			children = (
-				42EB605F2942485C00C9DED6 /* VideoGamesTests.swift */,
+				42CABFEF294F9BAA005AA7BA /* DetailTests.swift */,
+				42CABFF0294F9BAA005AA7BA /* VideoGamesTests.swift */,
 			);
 			path = VideoGamesTests;
 			sourceTree = "<group>";
@@ -455,6 +423,7 @@
 					};
 					42EB605A2942485C00C9DED6 = {
 						CreatedOnToolsVersion = 14.1;
+						LastSwiftMigration = 1410;
 						TestTargetID = 42EB60412942485B00C9DED6;
 					};
 					42EB60642942485C00C9DED6 = {
@@ -544,7 +513,6 @@
 				42EB60B0294666B700C9DED6 /* DetailModel.swift in Sources */,
 				42EB60892944B7C700C9DED6 /* BaseResponse.swift in Sources */,
 				42EB60952944EBDE00C9DED6 /* CoreDataManager.swift in Sources */,
-				42CABFEA294E68D3005AA7BA /* FavouriteViewModel.swift in Sources */,
 				42EB609D2944F41200C9DED6 /* NewNoteViewModel.swift in Sources */,
 				42CABFD5294E4B85005AA7BA /* NotificationManager.swift in Sources */,
 			);
@@ -554,7 +522,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42EB60602942485C00C9DED6 /* VideoGamesTests.swift in Sources */,
+				42CABFF2294F9BAA005AA7BA /* DetailTests.swift in Sources */,
+				42CABFF3294F9BAA005AA7BA /* VideoGamesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -786,14 +755,21 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.VideoGamesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VideoGames.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VideoGames";
@@ -805,10 +781,16 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.VideoGamesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

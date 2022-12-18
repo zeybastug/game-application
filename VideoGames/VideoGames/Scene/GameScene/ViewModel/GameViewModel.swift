@@ -14,7 +14,6 @@ protocol GameViewModelProtocol {
     var selectedFilter : String { get set }
     var selectedSearch : String { get set }
     var delegate: GameViewModelDelegate? { get set }
-    func getGames()
     func fetchScrolledGame(tableView:UITableView)
     func setupGenreOptions()
     func getFilteredGames(tableView:UITableView)
@@ -26,9 +25,8 @@ protocol GameViewModelDelegate:AnyObject{
     var isLoading:Bool { get set }
 }
 
-
 class GameViewModel : GameViewModelProtocol {
-  
+    
     var genreList: [GenreModel] = []
     
     weak var delegate: GameViewModelDelegate?
@@ -41,22 +39,29 @@ class GameViewModel : GameViewModelProtocol {
     
     var selectedLanguage : String = "en"
     
+    var notificationManager : NotificationManagerProtocol
+    
+    init(){
+        notificationManager = NotificationManager()
+        notificationManager.registerForPushNotifications()
+        notificationManager.scheduleNotification(notificationType: "Hello")
+    }
+    
     var sortOptions:[SortOptions] = [SortOptions.noOrder(label: ""),SortOptions.name(label: "Name"), SortOptions.releaseDate(label: "Release Date"), SortOptions.rating(label: "Rating")]
     
     
     func getAllGameWithActivity(_ activityView: UIActivityIndicatorView,tableView:UITableView) {
         Client.getGames(page:page) { res, error in
-            activityView.stopAnimating()
-            GamesViewController.games = res!.results
-            tableView.reloadData()
+            if let res = res {
+                activityView.stopAnimating()
+                GamesViewController.games = res.results
+                tableView.reloadData()
+            }
         }
     }
     
-    func getGames() {
-        
-    }
-    
     func fetchScrolledGame(tableView:UITableView) {
+        page += 1
         Client.getSearchedAndFilteredGames(page: page, game: selectedSearch, genre: selectedFilter) {
             [weak self] res, error in
             guard let self = self else { return }
@@ -66,25 +71,33 @@ class GameViewModel : GameViewModelProtocol {
         }
     }
     
-    func setupGenreOptions() {
-        Client.getGenreOptions { [weak self] res, error in
-            guard let self = self else { return }
+    func handleGenreOptionsResponse(_ res: ResultModel?, _ self: GameViewModel) {
+        if let res = res {
             var noGenre = GenreModel()
             noGenre.name = "All Games"
             noGenre.slug = ""
             noGenre.id = 0
             self.genreList.append(noGenre)
-            self.genreList.append(contentsOf: res!.results)
+            self.genreList.append(contentsOf: res.results)
+        }
+    }
+    
+    func setupGenreOptions() {
+        Client.getGenreOptions { [weak self] res, error in
+            guard let self = self else { return }
+            self.handleGenreOptionsResponse(res, self)
         }
     }
     
     func getAllGames(tableView:UITableView) {
+        page = 1
         Client.getGames(page: page) { res, error in
             GamesViewController.games = res!.results
             tableView.reloadData()
         }
     }
     func getFilteredGames(tableView:UITableView) {
+        page = 1
         Client.getSearchedAndFilteredGames(page: page, game:selectedSearch , genre: selectedFilter) {
             res, error in
             GamesViewController.games = res!.results

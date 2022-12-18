@@ -9,28 +9,46 @@ import XCTest
 @testable import VideoGames
 
 final class VideoGamesTests: XCTestCase {
-
+    
+    var viewModel: GameViewModel!
+    var fetchExpectation: XCTestExpectation!
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        viewModel = GameViewModel()
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func getGames(){
+        fetchExpectation.fulfill()
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func testGetGames() throws {
+        //When
+        let expec = expectation(description: "Get Games")
+        Client.getGames(page: 1) {res,_ in
+            GamesViewController.games = res!.results
+            expec.fulfill()
         }
+        wait(for: [expec], timeout: 30)
+        
+        //Then
+        XCTAssertEqual(GamesViewController.games.count, 20)
     }
-
+    
+    func  testGetGenres() throws {
+        let expec = expectation(description: "Get Genres")
+        Client.getGenreOptions() { [weak self] res, error in
+            guard let self = self else { return }
+            self.viewModel.handleGenreOptionsResponse(res, self.viewModel)
+            expec.fulfill()
+        }
+        wait(for: [expec], timeout: 30)
+        
+        //Then
+        XCTAssertEqual(viewModel.genreList.count, 20)
+        XCTAssertEqual(viewModel.genreList[0].name, "All Games")
+    }
 }
+
+
+
+
